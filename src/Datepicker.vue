@@ -19,9 +19,11 @@
         <datepicker-agenda :disable-passed-days="disablePassedDays"
                            :doubled="doubled"
                            :disabled-days="disabledDays"
+                           :available-periods="availablePeriods"
                            :lang="lang"
                            :orientation="orientation"
                            :show="isVisible"
+                           :header="header"
                            @change="selectDate"
                            @hide="hideDatePicker"
                            @cancel="cancelDateSelection">
@@ -39,8 +41,10 @@
             'datepicker-agenda': DatepickerAgenda
         },
         props: {
+            header: { type: Boolean, default: true },
             classDesign: { type: String, default: '' },
             disablePassedDays: { type: Boolean, default: false },
+            availablePeriods: { type: Array, default() { return [] } },
             disabledDays: { type: Array, default() { return [] } },
             doubled: { type: Boolean, default: false },
             format: { type: String, default: 'YYYY-MM-DD' },

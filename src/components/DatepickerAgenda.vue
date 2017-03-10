@@ -292,6 +292,7 @@
              v-if="show">
 
             <div class="datepicker-header"
+                 v-if="header"
                  :class="[classOrientation]">
                 <div class="datepicker-year" @click="showOrHideYears">
                     <transition-group name="slideh">
@@ -402,8 +403,10 @@
                     return moment();
                 }
             },
+            header: { type: Boolean, default: true },
             disablePassedDays: { type: Boolean, default: false },
             disabledDays: { type: Array, default() { return [] } },
+            availablePeriods: { type: Array, default() { return [] } },
             doubled: { type: Boolean, default: false },
             lang: { type: String, default: 'en' },
             orientation: { type: String, default: 'portrait'},
@@ -467,7 +470,7 @@
                 if (this.lang == 'sk') tmp[1] = 'zrušiť'; //Slovak
                 if (this.lang == 'sl') tmp[1] = 'preklic'; //Slovenian
                 if (this.lang == 'sv') tmp[1] = 'avboka'; //Swedish
-                if (this.lang == 'uk') tmp[1] = 'preklic'; //Ukrainian
+                if (this.lang == 'uk') tmp[1] = 'відмінити'; //Ukrainian
 
                 return tmp;
             }
@@ -484,8 +487,14 @@
             },
             yearsVisible(val, oldval) {
                 let scrollOffset = (this.date.year() - this.years[0].year()) * 40 - 130;
-                $('.datepicker-years').scrollTop(scrollOffset);
+                this.scrollToTop('.datepicker-years', scrollOffset)
             }
+        },
+        scrollToTop(selector, scrollOffset = 0) {
+          let element = document.querySelectorAll(selector)[0]
+          if(element){
+            element.scrollTop = scrollOffset
+          }
         },
         created() {
             this.date = this.initialDate.clone();
@@ -501,12 +510,30 @@
                 if (year.year() == this.date.year()) return 'selected';
                 else return '';
             },
+            parseAndNormalize(time, format) {
+              return this.normalize(moment(time, format))
+            },
+            normalize(m) {
+                return m.startOf('day')
+            },
+            isInRange(day, range){
+              let from = this.parseAndNormalize(range.from),
+                  to = this.parseAndNormalize(range.to);
+              return day.isSameOrAfter(from, 'days') && day.isSameOrBefore(to)
+            },
             isDisabled(day) {
-                if (this.disabledDays.length > 0)
-                    for (let i=0; i<this.disabledDays.length; i++)
-                        if (moment(this.disabledDays[i], 'YYYY-MM-D').startOf('day').unix() === day.startOf('day').unix()) return true
+                let i = 0;
+                this.normalize(day)
+                if (this.disabledDays.length)
+                    for (i=0; i<this.disabledDays.length; i++)
+                        if (this.parseAndNormalize(this.disabledDays[i]).isSame(day)) return true
 
-                if (this.disablePassedDays) return day < moment().startOf('day');
+                if (this.disablePassedDays) return day.isSameOrAfter(moment().startOf('day'));
+                if (this.availablePeriods.length) {
+                    for (i=0; i<this.availablePeriods.length; i++)
+                        if (this.isInRange(day, this.availablePeriods[i])) return false
+                    return true
+                }
                 return false;
             },
             isSelected(day) {
@@ -528,11 +555,25 @@
                 this.setMonths();
 
                 let scrollOffset = (this.date.year() - this.years[0].year()) * 40 - 130;
-                $('.datepicker-years').animate({ scrollTop: scrollOffset}, '100', () => {
-                    this.showOrHideYears();
-                });
 
+                this.scrollTo(document.querySelectorAll('.datepicker-years')[0], scrollOffset, 200,
+                    () => this.showOrHideYears()
+                )
                 this.$emit('change', this.date);
+            },
+            scrollTo(element, to, duration = 200, cb) {
+                if (!element || duration <= 0) return;
+                var difference = to - element.scrollTop;
+                var perTick = difference / duration * 10;
+
+                setTimeout(function() {
+                    element.scrollTop = element.scrollTop + perTick;
+                    if (element.scrollTop == to) {
+                      cb && cb()
+                      return;
+                    }
+                    this.scrollTo(element, to, duration - 10, cb);
+                }, 10);
             },
             setClassDirection(date) {
                 this.dayDirection = 'direction-next';

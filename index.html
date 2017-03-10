@@ -6,7 +6,6 @@
 
     <meta name="viewport" content="width=device-width, user-scalable=no">
 
-    <script   src="https://code.jquery.com/jquery-3.1.0.min.js"   integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s="   crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css?family=Roboto:100" rel="stylesheet">
 
     <style>
@@ -16,14 +15,12 @@
     </style>
   </head>
   <body>
-
     <div id="app">
-      <datepicker :disable-passed-days="true"
-                  lang="en"
-                  :doubled="true">
+      <datepicker
+          :header="false"
+          :available-periods="[{from: '2017-03-15', to: '2017-03-20'}, {from: '2017-03-25', to: '2017-03-30'}]"
+      >
       </datepicker>
     </div>
-
-    <script src="/Users/bastiengranger/htdocs/VueJS/perso/test-npm-package/dist/vue-material-datepicker.js"></script>
   </body>
 </html>
