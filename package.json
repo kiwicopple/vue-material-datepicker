@@ -4,11 +4,8 @@
   "description": "vue datepicker with a material-ui design",
   "author": "Bastien Granger <grangerbastien@gmail.com>",
   "private": false,
+  "license": "MIT",
   "main": "dist/vue-material-datepicker.js",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/bastienGranger/vue-material-datepicker"
-  },
   "scripts": {
     "start": "npm run dev",
     "dev": "node build/dev-server.js",
