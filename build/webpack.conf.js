@@ -30,14 +30,14 @@ module.exports = {
     }
   },
   resolve: {
-    extensions: ['', '.js']
+    extensions: ['', '.js', '.vue', '.scss'],
+    fallback: [path.join(__dirname, '../node_modules')],
+    alias: {
+      'vue$': 'vue/dist/vue',
+      'src': path.resolve(__dirname, '../src'),
+      'assets': path.resolve(__dirname, '../demo/assets'),
+      'components': path.resolve(__dirname, '../demo/components')
+    }
   },
-  plugins: [
-    new webpack.optimize.UglifyJsPlugin({
-      compress: {
-        warnings: false
-      }
-    }),
-    new webpack.optimize.OccurenceOrderPlugin(),
-  ]
+  plugins: []
 };
