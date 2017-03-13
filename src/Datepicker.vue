@@ -37,6 +37,10 @@
     import DatepickerAgenda from './components/DatepickerAgenda.vue';
 
     export default {
+        model: {
+            prop: 'date_formatted',
+            event: 'change'
+        },
         components: {
             'datepicker-agenda': DatepickerAgenda
         },
@@ -75,6 +79,7 @@
         methods: {
             selectDate(newDate) {
                 this.date = newDate;
+                this.$emit('change', this.date_formatted);
             },
             showDatepicker() {
                 this.isVisible = true;
