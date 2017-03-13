@@ -350,7 +350,7 @@
                                  :class="classDirection"
                                  :key="month">
                                 <div class="datepicker-day"
-                                     :style="{ width: (month.getWeekStart() * 41) + 'px' }">
+                                     :style="{ width: (month.getWeekStart() * this.cellWidth) + 'px' }">
                                 </div>
 
                                 <div class="datepicker-day"
@@ -403,6 +403,7 @@
                     return moment();
                 }
             },
+            cellWidth: {type: Number, default: 41},
             header: { type: Boolean, default: true },
             disablePassedDays: { type: Boolean, default: false },
             disabledDays: { type: Array, default() { return [] } },

@@ -16,7 +16,8 @@
                :name="name"
                :value="date_raw">
 
-        <datepicker-agenda :disable-passed-days="disablePassedDays"
+        <datepicker-agenda :cellWidth="cellWidth"
+                           :disable-passed-days="disablePassedDays"
                            :doubled="doubled"
                            :disabled-days="disabledDays"
                            :available-periods="availablePeriods"
@@ -45,6 +46,7 @@
             'datepicker-agenda': DatepickerAgenda
         },
         props: {
+            cellWidth: { type: Number },
             header: { type: Boolean, default: true },
             classDesign: { type: String, default: '' },
             disablePassedDays: { type: Boolean, default: false },
