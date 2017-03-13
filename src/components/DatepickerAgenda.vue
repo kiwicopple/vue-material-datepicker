@@ -1,4 +1,4 @@
-<style lang="scss" scoped>
+<style lang="scss">
     @import '../assets/scss/variables';
     @import '../assets/scss/transitions';
 
