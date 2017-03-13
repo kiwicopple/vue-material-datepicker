@@ -403,7 +403,7 @@
                     return moment();
                 }
             },
-            cellWidth: {type: Number, default: 41},
+            cellWidth: {type: [Number, String], default: 41},
             header: { type: Boolean, default: true },
             disablePassedDays: { type: Boolean, default: false },
             disabledDays: { type: Array, default() { return [] } },

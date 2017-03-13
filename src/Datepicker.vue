@@ -46,7 +46,7 @@
             'datepicker-agenda': DatepickerAgenda
         },
         props: {
-            cellWidth: { type: Number },
+            cellWidth: { type: [Number, String] },
             header: { type: Boolean, default: true },
             classDesign: { type: String, default: '' },
             disablePassedDays: { type: Boolean, default: false },
