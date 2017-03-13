@@ -350,7 +350,7 @@
                                  :class="classDirection"
                                  :key="month">
                                 <div class="datepicker-day"
-                                     :style="{ width: (month.getWeekStart() * this.cellWidth) + 'px' }">
+                                     :style="{ width: startWidth(month) }">
                                 </div>
 
                                 <div class="datepicker-day"
@@ -507,6 +507,9 @@
             });
         },
         methods: {
+            startWidth(month) {
+                return month.getWeekStart() * parseInt(this.cellWidth) + 'px'
+            },
             classYear(year) {
                 if (year.year() == this.date.year()) return 'selected';
                 else return '';
