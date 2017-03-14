@@ -1,7 +1,7 @@
-var Vue =  require('vue');
+var Vue = require('vue');
 var Datepicker = require('./Datepicker.vue');
 
 new Vue({
-    el: '#app',
-    components: { datepicker: Datepicker },
+  el: '#app',
+  components: { datepicker: Datepicker },
 });
