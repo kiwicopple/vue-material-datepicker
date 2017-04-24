@@ -25,7 +25,7 @@
   }
 
   .datepicker-header {
-    background-color: $ primary-color;
+    background-color: $primary-color;
     color: #ffffff;
     padding: 20px;
   &
@@ -72,25 +72,25 @@
   }
   .datepicker-weekday {
     float: left;
-    width: $ day-size;
+    width: $day-size;
     text-align: center;
   }
   .datepicker-days {
     width: 287px;
     margin: 14px;
     margin-bottom: 0;
-    height: $ day-size *6;
+    height: $day-size *6;
     position: relative;
     overflow: hidden;
     float: left;
     transition: height 300ms cubic-bezier(0.75, 0.02, 0.27, 0.99);
   }
   .datepicker-day {
-    width: $ day-size;
-    height: $ day-size;
+    width: $day-size;
+    height: $day-size;
     text-align: center;
     float: left;
-    line-height: $ day-size;
+    line-height: $day-size;
     cursor: pointer;
     position: relative;
     transition: color 450ms ease;
@@ -127,10 +127,10 @@
 
   .datepicker-day-effect {
     position: absolute;
-    width: $ day-size -4px;
-    height: $ day-size -4px;
+    width: $day-size -4px;
+    height: $day-size -4px;
     border-radius: 50%;
-    background-color: lighten($ primary-color, 5%);
+    background-color: lighten($primary-color, 5%);
     top: 2px;
     left: 2px;
     transform: scale(0);
@@ -213,7 +213,7 @@
     display: inline-block;
     cursor: pointer;
     outline: none;
-    color: lighten($ primary-color, 10%);
+    color: lighten($primary-color, 10%);
     font-size: 14px;
     font-weight: 500;
     text-transform: uppercase;
@@ -231,7 +231,7 @@
 
   .datepicker-years {
     width: 315px;
-    height: $ day-size *6 +56 +16;
+    height: $day-size *6 +56 +16;
     background-color: #ffffff;
     position: absolute;
     z-index: 2;
@@ -255,7 +255,7 @@
     font-size: 30px;
     height: 30px;
     font-weight: 300;
-    color: $ primary-color;
+    color: $primary-color;
   }
   }
   }
