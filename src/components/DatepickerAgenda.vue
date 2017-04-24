@@ -533,7 +533,7 @@
           for (i = 0; i < this.disabledDays.length; i++)
             if (this.parseAndNormalize(this.disabledDays[i]).isSame(day)) return true
 
-        if (this.disablePassedDays) return day.isSameOrAfter(moment().startOf('day'));
+        if (this.disablePassedDays) return day.isBefore(moment().startOf('day'));
         if (this.availablePeriods.length) {
           for (i = 0; i < this.availablePeriods.length; i++)
             if (this.isInRange(day, this.availablePeriods[i])) return false
