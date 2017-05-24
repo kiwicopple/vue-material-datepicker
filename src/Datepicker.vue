@@ -89,7 +89,7 @@
     methods: {
       selectDate(newDate) {
         this.date = newDate;
-        this.$emit('change', this.date_formatted);
+        this.$emit('change', this.date_raw);
       },
       showDatepicker() {
         this.isVisible = true;
