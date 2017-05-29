@@ -1,6 +1,7 @@
 <style lang="scss">
   @import '../assets/scss/variables';
   @import '../assets/scss/transitions';
+
   .datepicker {
     position: absolute;
     width: 315px;
@@ -9,37 +10,37 @@
     -webkit-box-shadow: 5px 22px 95px -14px rgba(0, 0, 0, 1);
     -moz-box-shadow: 5px 22px 95px -14px rgba(0, 0, 0, 1);
     box-shadow: 5px 22px 95px -14px rgba(0, 0, 0, 1);
-  &
-  .double {
-    width: 630px;
-  &
-  .landscape {
-    width: 840px;
-  }
-  }
+    &
+    .double {
+      width: 630px;
+      &
+      .landscape {
+        width: 840px;
+      }
+    }
 
-  &
-  .landscape {
-    width: 520px;
-  }
+    &
+    .landscape {
+      width: 520px;
+    }
   }
 
   .datepicker-header {
     background-color: $primary-color;
     color: #ffffff;
     padding: 20px;
-  &
-  .landscape {
-    height: 337px;
-    width: 165px;
-    float: left;
-  }
+    &
+    .landscape {
+      height: 337px;
+      width: 165px;
+      float: left;
+    }
   }
 
   .datepicker-body {
-  .landscape {
-    float: left;
-  }
+    .landscape {
+      float: left;
+    }
   }
 
   .datepicker-year {
@@ -51,17 +52,18 @@
     overflow: hidden;
     cursor: pointer;
   }
+
   .datepicker-date {
     position: relative;
     font-size: 32px;
     line-height: 32px;
     height: 34px;
     overflow: hidden;
-  &
-  .landscape {
-    line-height: 40px;
-    height: 80px;
-  }
+    &
+    .landscape {
+      line-height: 40px;
+      height: 80px;
+    }
   }
 
   .datepicker-week {
@@ -70,11 +72,13 @@
     color: rgba(0, 0, 0, 0.8);
     padding: 0 14px;
   }
+
   .datepicker-weekday {
     float: left;
     width: $day-size;
     text-align: center;
   }
+
   .datepicker-days {
     width: 287px;
     margin: 14px;
@@ -85,6 +89,7 @@
     float: left;
     transition: height 300ms cubic-bezier(0.75, 0.02, 0.27, 0.99);
   }
+
   .datepicker-day {
     width: $day-size;
     height: $day-size;
@@ -94,35 +99,35 @@
     cursor: pointer;
     position: relative;
     transition: color 450ms ease;
-  &
-  [disabled] {
-    cursor: default;
-    color: darken(#ffffff, 20%);
-  .datepicker-day-effect {
-    background-color: transparent;
-  }
-  .datepicker-day-text {
-    color: darken(#ffffff, 20%);
-  }
-  }
+    &
+    [disabled] {
+      cursor: default;
+      color: darken(#ffffff, 20%);
+      .datepicker-day-effect {
+        background-color: transparent;
+      }
+      .datepicker-day-text {
+        color: darken(#ffffff, 20%);
+      }
+    }
 
-  &
-  :hover {
-    color: #ffffff;
-  .datepicker-day-effect {
-    transform: scale(1);
-    opacity: 0.6;
-  }
-  }
+    &
+    :hover {
+      color: #ffffff;
+      .datepicker-day-effect {
+        transform: scale(1);
+        opacity: 0.6;
+      }
+    }
 
-  &
-  .selected {
-    color: #ffffff;
-  .datepicker-day-effect {
-    transform: scale(1);
-    opacity: 1;
-  }
-  }
+    &
+    .selected {
+      color: #ffffff;
+      .datepicker-day-effect {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
   }
 
   .datepicker-day-effect {
@@ -137,9 +142,11 @@
     opacity: 0;
     transition: all 450ms ease;
   }
+
   .datepicker-day-text {
     position: relative;
   }
+
   .datepicker-controls {
     position: relative;
     z-index: 2;
@@ -147,22 +154,22 @@
     height: 56px;
     line-height: 56px;
     text-align: center;
-  span {
-    position: relative;
-    background-color: transparent;
-    border: none;
-    user-select: none;
-    outline: none;
-    cursor: pointer
-  }
-  &
-  .double {
-    width: 630px;
-  }
-  &
-  .landscape {
-    float: left;
-  }
+    span {
+      position: relative;
+      background-color: transparent;
+      border: none;
+      user-select: none;
+      outline: none;
+      cursor: pointer
+    }
+    &
+    .double {
+      width: 630px;
+    }
+    &
+    .landscape {
+      float: left;
+    }
   }
 
   .datepicker-next {
@@ -171,6 +178,7 @@
     line-height: 56px;
     float: right;
   }
+
   .datepicker-prev {
     width: 56px;
     height: 56px;
@@ -178,10 +186,12 @@
     float: left;
 
   }
+
   .datepicker-arrow {
     width: 11px;
     height: 11px;
   }
+
   .datepicker-month {
     width: 315px;
     position: relative;
@@ -190,6 +200,7 @@
     float: left;
     overflow: hidden;
   }
+
   .datepicker-month-label {
     position: absolute;
     top: 20px;
@@ -204,29 +215,30 @@
     height: 16px;
     text-align: center;
   }
+
   .datepicker-actions {
     text-align: right;
     padding: 8px;
-  span {
-    border: none;
-    background-color: transparent;
-    display: inline-block;
-    cursor: pointer;
-    outline: none;
-    color: lighten($primary-color, 10%);
-    font-size: 14px;
-    font-weight: 500;
-    text-transform: uppercase;
-    min-width: 88px;
-    text-align: center;
-    -webkit-appearance: none;
-    line-height: 36px;
-    transition: all 0.3s ease;
-  &
-  :hover {
-    background-color: darken(#ffffff, 5%);
-  }
-  }
+    span {
+      border: none;
+      background-color: transparent;
+      display: inline-block;
+      cursor: pointer;
+      outline: none;
+      color: lighten($primary-color, 10%);
+      font-size: 14px;
+      font-weight: 500;
+      text-transform: uppercase;
+      min-width: 88px;
+      text-align: center;
+      -webkit-appearance: none;
+      line-height: 36px;
+      transition: all 0.3s ease;
+      &
+      :hover {
+        background-color: darken(#ffffff, 5%);
+      }
+    }
   }
 
   .datepicker-years {
@@ -238,37 +250,37 @@
     margin-top: -56px;
 
     overflow: scroll;
-  .datepicker-years-content {
-  .datepicker-year {
-    width: 100%;
-    text-align: center;
-    font-size: 25px;
-    line-height: 25px;
-    height: 25px;
-    margin: 15px 0;
+    .datepicker-years-content {
+      .datepicker-year {
+        width: 100%;
+        text-align: center;
+        font-size: 25px;
+        line-height: 25px;
+        height: 25px;
+        margin: 15px 0;
 
-    transition: all 0.3s ease;
-  &
-  .selected,
-  &
-  :hover {
-    font-size: 30px;
-    height: 30px;
-    font-weight: 300;
-    color: $primary-color;
-  }
-  }
-  }
+        transition: all 0.3s ease;
+        &
+        .selected,
+        &
+        :hover {
+          font-size: 30px;
+          height: 30px;
+          font-weight: 300;
+          color: $primary-color;
+        }
+      }
+    }
 
-  &
-  .double {
-    width: 630px;
-  }
-  &
-  .landscape {
-    margin-top: 0;
-    margin-left: 205px;
-  }
+    &
+    .double {
+      width: 630px;
+    }
+    &
+    .landscape {
+      margin-top: 0;
+      margin-left: 205px;
+    }
   }
 
 </style>
@@ -528,18 +540,25 @@
       },
       isDisabled(day) {
         let i = 0;
+        let isDisabled = false;
+
         this.normalize(day)
         if (this.disabledDays.length)
-          for (i = 0; i < this.disabledDays.length; i++)
+          for(i = 0; i < this.disabledDays.length; i++)
             if (this.parseAndNormalize(this.disabledDays[i]).isSame(day)) return true
 
-        if (this.disablePassedDays) return day.isBefore(moment().startOf('day'));
-        if (this.availablePeriods.length) {
-          for (i = 0; i < this.availablePeriods.length; i++)
-            if (this.isInRange(day, this.availablePeriods[i])) return false
-          return true
+        if (this.disablePassedDays) {
+          isDisabled = day.isBefore(moment().startOf('day')); // check if day has passed
+          if (isDisabled) return true
         }
-        return false;
+
+        if (this.availablePeriods.length) {
+          isDisabled = this.availablePeriods.some(p => {
+            return !this.isInRange(day, p)
+          })
+        }
+
+        return isDisabled
       },
       isSelected(day) {
         return this.date.unix() === day.unix();
@@ -608,7 +627,7 @@
         let tmpMonths = [];
         let monthsLength = this.months.length - 1;
 
-        for (var i = 0; i < monthsLength; i++) {
+        for(var i = 0; i < monthsLength; i++) {
           tmpMonths.push(new month(this.months[i + 1].month, this.months[i + 1].year));
         }
 
@@ -630,7 +649,7 @@
         let tmpMonths = [];
         let monthsLength = this.months.length - 1;
 
-        for (var i = monthsLength; i > 0; i--) {
+        for(var i = monthsLength; i > 0; i--) {
           tmpMonths.push(new month(this.months[i - 1].month, this.months[i - 1].year));
         }
 
