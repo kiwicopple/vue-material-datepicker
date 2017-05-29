@@ -610,9 +610,9 @@
         this.dayDirection = 'direction-next';
         if (date.isBefore(this.date)) this.dayDirection = 'direction-prev';
       },
-      setMonths(firstMonth) {
+      setMonths(startMonth) {
         let newMonths = [];
-        let firstMonth = new month(firstMonth || this.date.month(), this.date.year());
+        let firstMonth = new month(startMonth || this.date.month(), this.date.year());
         newMonths.push(firstMonth);
 
         if (this.doubled) {
