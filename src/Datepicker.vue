@@ -61,7 +61,7 @@
         }
       },
       doubled: { type: Boolean, default: false },
-      format: { type: String, default: 'YYYY-MM-DD' },
+      format: { type: String, default: 'MM/DD/YYYY' },
       id: { type: String, default: 'vue-datepicker' },
       lang: { type: String, default: 'en' },
       name: { type: String, default: 'datepicker' },
