@@ -503,6 +503,12 @@
       yearsVisible(val, oldval) {
         let scrollOffset = (this.date.year() - this.years[0].year()) * 40 - 130;
         this.scrollToTop('.datepicker-years', scrollOffset)
+      },
+      firstMonth (val, old) {
+        console.log(val)
+        if (val) {
+          this.setMonths(val)
+        }
       }
     },
     scrollToTop(selector, scrollOffset = 0) {
@@ -604,9 +610,9 @@
         this.dayDirection = 'direction-next';
         if (date.isBefore(this.date)) this.dayDirection = 'direction-prev';
       },
-      setMonths() {
+      setMonths(firstMonth) {
         let newMonths = [];
-        let firstMonth = new month(this.firstMonth || this.date.month(), this.date.year());
+        let firstMonth = new month(firstMonth || this.date.month(), this.date.year());
         newMonths.push(firstMonth);
 
         if (this.doubled) {
