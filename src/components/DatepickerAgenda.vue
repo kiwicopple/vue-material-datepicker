@@ -424,7 +424,8 @@
       doubled: { type: Boolean, default: false },
       lang: { type: String, default: 'en' },
       orientation: { type: String, default: 'portrait' },
-      show: { type: Boolean, required: true }
+      show: { type: Boolean, required: true },
+      firstMonth: { type: Number }
     },
     data() {
       return {
@@ -605,7 +606,7 @@
       },
       setMonths() {
         let newMonths = [];
-        let firstMonth = new month(this.date.month(), this.date.year());
+        let firstMonth = new month(this.firstMonth || this.date.month(), this.date.year());
         newMonths.push(firstMonth);
 
         if (this.doubled) {

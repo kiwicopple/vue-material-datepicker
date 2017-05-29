@@ -21,6 +21,7 @@
                        :doubled="doubled"
                        :disabled-days="disabledDays"
                        :available-periods="availablePeriods"
+                       :firstMonth="firstMonth"
                        :lang="lang"
                        :orientation="orientation"
                        :show="isVisible"
@@ -65,7 +66,8 @@
       id: { type: String, default: 'vue-datepicker' },
       lang: { type: String, default: 'en' },
       name: { type: String, default: 'datepicker' },
-      orientation: { type: String, default: 'portrait' }
+      orientation: { type: String, default: 'portrait' },
+      firstMonth: { type: Number }
     },
     data() {
       return {
