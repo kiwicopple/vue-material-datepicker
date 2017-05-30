@@ -505,7 +505,6 @@
         this.scrollToTop('.datepicker-years', scrollOffset)
       },
       firstMonth (val, old) {
-        console.log(val)
         if (val) {
           this.setMonths(val)
         }
