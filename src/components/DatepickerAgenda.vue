@@ -559,9 +559,7 @@
         }
 
         if (this.availablePeriods.length) {
-          isDisabled = this.availablePeriods.some(p => {
-            return !this.isInRange(day, p)
-          })
+          isDisabled = !this.availablePeriods.some(p => this.isInRange(day, p))
         }
 
         return isDisabled
