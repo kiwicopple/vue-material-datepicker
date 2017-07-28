@@ -9,6 +9,7 @@
     <input type="text"
            :class="classDesign"
            :value="date_formatted"
+           placeholder="placeholder"
            @click="showDatepicker">
 
     <input type="hidden"
@@ -16,12 +17,12 @@
            :name="name"
            :value="date_raw">
 
-    <datepicker-agenda :cellWidth="cellWidth"
+    <datepicker-agenda :cell-width="cellWidth"
                        :disable-passed-days="disablePassedDays"
                        :doubled="doubled"
                        :disabled-days="disabledDays"
                        :available-periods="availablePeriods"
-                       :firstMonth="firstMonth"
+                       :first-month="firstMonth"
                        :lang="lang"
                        :orientation="orientation"
                        :show="isVisible"
@@ -47,6 +48,7 @@
       'datepicker-agenda': DatepickerAgenda
     },
     props: {
+      placeholder: { type: String, default: 'Select Date'},
       cellWidth: { type: [Number, String] },
       header: { type: Boolean, default: true },
       classDesign: { type: String, default: '' },
