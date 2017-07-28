@@ -9,7 +9,7 @@
     <input type="text"
            :class="classDesign"
            :value="date_formatted"
-           placeholder="placeholder"
+           :placeholder="placeholder"
            @click="showDatepicker">
 
     <input type="hidden"
