@@ -100,9 +100,18 @@
         this.$emit('change', this.date_raw);
       },
       showDatepicker() {
+        let datepickerContainer = document.getElementsByClassName('datepicker-container')[0];
+        if (datepickerContainer.classList.contains('datepicker-open')) {
+          datepickerContainer.classList.remove('datepicker-open');
+        } else {
+          datepickerContainer.classList.add('datepicker-open');
+        }
         this.isVisible = !this.isVisible;
       },
       hideDatePicker() {
+        let datepickerContainer = document.getElementsByClassName('datepicker-container')[0];
+        console.log(datepickerContainer);
+        datepickerContainer.classList.remove('datepicker-open');
         this.isVisible = false;
       },
       cancelDateSelection() {
