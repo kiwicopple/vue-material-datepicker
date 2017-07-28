@@ -297,9 +297,9 @@
            :class="[classOrientation]">
         <div class="datepicker-year" @click="showOrHideYears">
           <transition-group name="slideh">
-                        <span v-for="year in [year]"
+                        <span v-for="(year, index) in [year]"
                               :class="dayDirection"
-                              :key="year">
+                              :key="index">
                             {{ year }}
                         </span>
           </transition-group>
@@ -307,9 +307,9 @@
         <div class="datepicker-date"
              :class="[classOrientation]">
           <transition-group name="slideh">
-                        <span v-for="dateFormatted in [dateFormatted]"
+                        <span v-for="(dateFormatted, index) in [dateFormatted]"
                               :class="[dayDirection]"
-                              :key="dateFormatted">
+                              :key="index">
                             {{ dateFormatted }}
                         </span>
           </transition-group>
@@ -343,7 +343,8 @@
 
           <div class="datepicker-week">
             <div class="datepicker-weekday"
-                 v-for="day in weekDays"
+                 v-for="(day, index) in weekDays"
+                 :key="index"
                  track-by="$index">
               {{ day }}
             </div>
@@ -351,9 +352,9 @@
 
           <div class="datepicker-days">
             <transition-group name="slidev">
-              <div v-for="month in [month]"
+              <div v-for="(month, index) in [month]"
                    :class="classDirection"
-                   :key="month">
+                   :key="index">
                 <div class="datepicker-day"
                      :style="{ width: startWidth(month) }">
                 </div>
