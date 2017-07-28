@@ -110,7 +110,6 @@
       },
       hideDatePicker() {
         let datepickerContainer = document.getElementsByClassName('datepicker-container')[0];
-        console.log(datepickerContainer);
         datepickerContainer.classList.remove('datepicker-open');
         this.isVisible = false;
       },
