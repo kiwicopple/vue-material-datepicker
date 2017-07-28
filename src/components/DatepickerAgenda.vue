@@ -334,9 +334,9 @@
         <div class="datepicker-month" v-for="month in months">
           <transition-group name="slidev">
             <div class="datepicker-month-label"
-                 v-for="month in [month]"
+                 v-for="(month, index) in [month]"
                  :class="classDirection"
-                 :key="month">
+                 :key="index">
               {{ month.getFormatted() }}
             </div>
           </transition-group>
