@@ -10,7 +10,8 @@
            :class="classDesign"
            :value="date_formatted"
            :placeholder="placeholder"
-           @click="showDatepicker">
+           @click="showDatepicker"
+           v-on-clickaway="hideDatePicker">
 
     <input type="hidden"
            :id="id"
@@ -39,11 +40,14 @@
 
   import DatepickerAgenda from './components/DatepickerAgenda.vue';
 
+  import { mixin as clickaway } from 'vue-clickaway'
+
   export default {
     model: {
       prop: 'date_formatted',
       event: 'change'
     },
+    mixins: [ clickaway ],
     components: {
       'datepicker-agenda': DatepickerAgenda
     },
@@ -96,12 +100,10 @@
         this.$emit('change', this.date_raw);
       },
       showDatepicker() {
-        this.isVisible = true;
-        setTimeout(() => document.addEventListener('click', this.hideDatePicker), 0);
+        this.isVisible = !this.isVisible;
       },
       hideDatePicker() {
         this.isVisible = false;
-        document.removeEventListener('click', this.hideDatePicker);
       },
       cancelDateSelection() {
         this.hideDatePicker();
