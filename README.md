@@ -73,7 +73,7 @@ email : grangerbastien@gmail.com
 ![simple landscape](https://s3-eu-west-1.amazonaws.com/npm-images/vue-material-datepicker/landscape-simple.png)
 ![simple years landscape](https://s3-eu-west-1.amazonaws.com/npm-images/vue-material-datepicker/landscape-simple-years.png)
 
-##Doubled landscape
+## Doubled landscape
 ![doubled landscape](https://s3-eu-west-1.amazonaws.com/npm-images/vue-material-datepicker/landscape-double.png)
 ![doubled years landscape](https://s3-eu-west-1.amazonaws.com/npm-images/vue-material-datepicker/landscape-double-years.png)
 
