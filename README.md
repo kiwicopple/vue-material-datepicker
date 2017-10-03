@@ -3,6 +3,54 @@ This datepicker is a fully customisable Vue(v2.1.6) version of the [material-ui 
 
 See below to discover all customisable components.
 
+#Installation
+
+## npm
+
+```shell
+$ npm install --save vue-material-datepicker
+```
+
+#Requirements
+[moment^2.14.1](http://momentjs.com/)
+
+#Usage
+
+```javascript
+import Vue from 'vue';
+import Datepicker from 'vue-material-datepicker';
+
+new Vue({
+    el: 'body',
+    components: { datepicker: Datepicker }
+});
+```
+
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>datepicker</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100" rel="stylesheet">
+
+    <style>
+    	body {
+    		font-family: 'Roboto', sans-serif;
+    	}
+    </style>
+  </head>
+  <body>
+
+    <datepicker></datepicker>
+
+  </body>
+</html>
+```
+
+
 #Contact
 Please give me some feedbacks to improve it !
 
@@ -30,57 +78,10 @@ email : grangerbastien@gmail.com
 ![doubled years landscape](https://s3-eu-west-1.amazonaws.com/npm-images/vue-material-datepicker/landscape-double-years.png)
 
 
-#Installation
-
-## npm
-
-```shell
-$ npm install vue-datepicker
-```
-
-#Requirements
-[moment^2.14.1](http://momentjs.com/)
-
-#Usage
-
-```javascript
-import Vue from 'vue';
-import Datepicker from 'vue-material-datepicker';
-
-new Vue({
-    el: 'body',
-    components: { datepicker: Datepicker }
-});
-```
-
-
-```html
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>datepicker</title>
-    
-    <link href="https://fonts.googleapis.com/css?family=Roboto:100" rel="stylesheet">
-
-    <style>
-    	body {
-    		font-family: 'Roboto', sans-serif;
-    	}
-    </style>
-  </head>
-  <body>
-
-    <datepicker></datepicker>
-
-  </body>
-</html>
-```
-
 #API
 ##format
 Date's format written in the text input
-   
+
 ![date input](https://s3-eu-west-1.amazonaws.com/npm-images/vue-material-datepicker/input-date.png)
 
 type : `String`   
@@ -126,7 +127,7 @@ supported languages:
 "sv" Swedish   
 "uk" Ukrenian   
 
-Traductions were made base on Google Translate... Feel free to email me if there are some mistakes or if your language is not supported yet. 
+Traductions were made base on Google Translate... Feel free to email me if there are some mistakes or if your language is not supported yet.
 
 e.g :   
 ```html
@@ -230,7 +231,7 @@ e.g:
 }
 ```
 
-    
+
 ```html
 <datepicker class-design="input-style"></datepicker>
 ```
@@ -245,7 +246,7 @@ type: `String`
 required: `false`      
 default: `"portrait"`    
 
-supported orientation: 
+supported orientation:
 "portrait"     
 "landscape"     
 
@@ -258,7 +259,7 @@ result:
 ![datepicker landscape exemple](https://s3-eu-west-1.amazonaws.com/npm-images/vue-material-datepicker/landscape-simple.png)
 
 ##Color customisation.
-Color customisation si not supported yet. But you can overwrite css classes as below : 
+Color customisation si not supported yet. But you can overwrite css classes as below :
 
 ```sass
 $primary-color: #3F51B5;
@@ -313,5 +314,3 @@ result :
 - responsive
 - color customisation
 - date range
-
-

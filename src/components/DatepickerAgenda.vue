@@ -402,6 +402,7 @@
   import * as monthClasses from '../modules/month.js';
 
   export default {
+    name: 'DatePickerAgenda',
     props: {
       initialDate: {
         type: Object,
