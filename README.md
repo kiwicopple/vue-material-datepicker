@@ -8,6 +8,7 @@ See below to discover all customisable components.
 ## npm
 
 ```shell
+$ npm install --save moment # install dependency
 $ npm install --save vue-material-datepicker
 ```
 
