@@ -399,7 +399,7 @@
   import moment from 'moment';
 
   import month from '../modules/month.js';
-  import * as monthClasses from '../modules/month.js';
+  // import * as monthClasses from '../modules/month.js';
 
   export default {
     name: 'DatePickerAgenda',
@@ -432,7 +432,7 @@
     data() {
       return {
         date: '',
-        weekDays: monthClasses.getWeekDays(this.lang),
+        weekDays: this.getWeekDays(this.lang),
         months: [],
         classDirection: 'off',
         dayDirection: 'off',
@@ -530,6 +530,12 @@
     methods: {
       startWidth(month) {
         return month.getWeekStart() * parseInt(this.cellWidth) + 'px'
+      },
+      getWeekDays(lang) {
+        let days = [];
+        moment.locale(lang);
+        for (let i = 0; i < 7; i++) days.push(moment().weekday(i).format('dd'));
+        return days;
       },
       classYear(year) {
         if (year.year() == this.date.year()) return 'selected';

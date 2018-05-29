@@ -1,7 +1,7 @@
 var moment = require('moment');
-var momentRange = require('moment-range');
+// var momentRange = require('moment-range');
 
-export default class {
+export default class Month {
 
   constructor (month, year) {
     this.start = moment([year, month]);
@@ -34,12 +34,12 @@ export default class {
   }
 }
 
-export function getWeekDays (lang) {
-  let days = [];
-
-  moment.locale(lang);
-
-  for (let i = 0; i < 7; i++) days.push(moment().weekday(i).format('dd'));
-
-  return days;
-}
+// export function getWeekDays (lang) {
+//   let days = [];
+//
+//   moment.locale(lang);
+//
+//   for (let i = 0; i < 7; i++) days.push(moment().weekday(i).format('dd'));
+//
+//   return days;
+// }
