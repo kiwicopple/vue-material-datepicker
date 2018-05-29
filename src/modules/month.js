@@ -33,13 +33,3 @@ export default class Month {
     return moment.range(start, end).toArray('years');
   }
 }
-
-export function getWeekDays (lang) {
-  let days = [];
-
-  moment.locale(lang);
-
-  for (let i = 0; i < 7; i++) days.push(moment().weekday(i).format('dd'));
-
-  return days;
-}
